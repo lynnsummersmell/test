@@ -13,9 +13,9 @@
  <%  
         try {  
             Class.forName("com.mysql.jdbc.Driver");  ////驱动程序名
-            String url = "jdbc:mysql://10.100.130.24:3306/test_mysql"; //数据库名
-            String username = "lilin";  //数据库用户名
-            String password = "Lilin123!";  //数据库用户密码
+            String url = "jdbc:mysql://10.28.151.116:3306/tpzlk_web"; //数据库名
+            String username = "tpzlk_web";  //数据库用户名
+            String password = "tpZlk123";  //数据库用户密码
             Connection conn = DriverManager.getConnection(url, username, password);  //连接状态
 
             if(conn != null){  
@@ -29,18 +29,18 @@
                 out.print("<br />");            
                 Statement stmt = null;  
                 ResultSet rs = null; 
-                String sql ="select * from person";  //查询语句
+                String sql ="select * from user_user limit 100";  //查询语句
                 stmt = conn.createStatement();  
                 rs = stmt.executeQuery(sql);  
                 out.println("执行结果如下所示:"); 
                 out.println("<br />"); 
                 out.println("-------------------------------"); 
                 out.println("<br />"); 
-                out.println("姓名" + "\t" + "别"+"\t"+"年龄");
+                out.println("nickname" + "\t" + "email"+"\t"+"user_name");
                 out.println("<br />");  
                 while (rs.next()) {  
-                out.println(rs.getString("name")+"   &nbsp  "+rs.getString("sex")+"  &nbsp "+rs.getInt("age"));
-                out.print("<br />");
+                    out.println(rs.getString("nickname") + "\t" + rs.getString("email") + "     " + rs.getString("user_name"));
+                    out.print("<br />");
                 }             
             } 
             else{  
