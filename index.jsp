@@ -6,7 +6,7 @@
 
 <html>
 <head>
-<title>通过JSP打开数据表</title>
+<title>通过JSP打开数据表2222</title>
 </head>
 <body>
 
